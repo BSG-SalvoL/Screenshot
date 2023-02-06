@@ -10,8 +10,8 @@ void MySave()
   if(Selected == null) MyFolderSelect();
   else
   {
-    screenshot.save(Selected.getAbsolutePath() + "\\ScreenShot" + contatore + ".jpg");
-    contatore ++;
+    screenshot.save(Selected.getAbsolutePath() + "\\ScreenShot" + active[4] + ".jpg");
+    active[4]++;
   }
 }
 

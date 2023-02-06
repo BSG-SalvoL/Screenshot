@@ -7,5 +7,4 @@ import java.io.File;
 import java.util.Iterator;
 import javax.imageio.*;
 import javax.imageio.stream.*;
-import com.sun.image.codec.jpeg.*;
 import java.io.*;

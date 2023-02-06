@@ -2,7 +2,7 @@ void printText()
 {
   fill(255);
   textSize(15);
-  text(com1 + com2 + com3 + com4 + com5, 20, height - height/4 + 20);
+  text(com1 + com2 + com3 + com4 + com5 + com6 + com7, 20, height - height/4 + 20);
   text(c + c1 + c2, width + width/40 - ((width/4)*2), height - height/4 + 20);
   stroke(255);
   line(width + width/50 - ((width/4)*2), height - height/4, width + width/50 - ((width/4)*2), height);
@@ -37,5 +37,7 @@ void printStatus()
     text(warningautosave, width + width/40 - ((width/4)*2), height - height/4 + 20);
   }
   fill(255);
-  text("\n\n\n          Index: "+ contatore, width + width/13 - ((width/4)*2), height - height/4 + 20);
+  text("\n\n\nIndex: "+ active[4] + "; Selected to Change: " + activestr[activeidx], width + width/13 - ((width/4)*2), height - height/4 + 20);
+  text("\n\n\n\nRegion Xmin: "+ active[0] + "; Region Xmax: " + active[2], width + width/13 - ((width/4)*2), height - height/4 + 20);
+  text("\n\n\n\n\nRegion Ymin: "+ active[1] + "; Region Ymax: " + active[3]  , width + width/13 - ((width/4)*2), height - height/4 + 20);
 }

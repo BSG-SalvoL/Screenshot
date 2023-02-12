@@ -13,12 +13,25 @@ void setup() {
 
 void settings()
 {
-  size((int)(displayWidth/1.5), (int)(displayHeight/1.5) + 150);
+  //size((int)(displayWidth/1.5), (int)(displayHeight/1.5) + 150);
+  size(1280, 720);
 }
 
 void draw() {
+  noStroke();
+  fill(0);
+  rect(0, 0, width, height - height/4);
   if (screenshot != null) image(screenshot, 0, 0, width, height - height/4);
   printStatus();
+  if(mouseX < width && mouseY < height - height/4) {
+    color c = get(mouseX, mouseY);
+    c = color(255-red(c), 255-green(c), 255-blue(c));
+    fill(c);
+    if(mouseX < 1200)
+      text((mouseX*((float)displayWidth/width)) + " , " + (mouseY*((float)displayHeight/(height-height/4))), pmouseX, pmouseY);
+    else
+      text((mouseX*((float)displayWidth/width)) + " , " + (mouseY*((float)displayHeight/(height-height/4))), pmouseX-100, pmouseY);
+  }
 }
 
 void keyPressed()

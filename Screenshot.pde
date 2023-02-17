@@ -1,9 +1,10 @@
 PImage screenshot;
 boolean AutoSave = false, retn = false, timing = false;
 File Selected = null;
-
 int active[] = {0, 0, displayWidth, displayHeight, 0};
 int activeidx = 0;
+
+IncInt incintTest = new IncInt(active[0], 0, displayWidth, 1000, 600);
 
 void setup() {
   background(0);
@@ -25,13 +26,15 @@ void draw() {
   printStatus();
   if(mouseX < width && mouseY < height - height/4) {
     color c = get(mouseX, mouseY);
-    c = color(255-red(c), 255-green(c), 255-blue(c));
+    c = complementary(c);
     fill(c);
     if(mouseX < 1200)
       text((mouseX*((float)displayWidth/width)) + " , " + (mouseY*((float)displayHeight/(height-height/4))), pmouseX, pmouseY);
     else
       text((mouseX*((float)displayWidth/width)) + " , " + (mouseY*((float)displayHeight/(height-height/4))), pmouseX-100, pmouseY);
   }
+  incintTest.draw();
+  
 }
 
 void keyPressed()
@@ -48,7 +51,8 @@ void keyPressed()
     if(active[activeidx] > 0)
       active[activeidx]--;
   }
-  
+  if(key == 'G' || key == 'g')
+    this.frame.setExtendedState(JFrame.ICONIFIED);
 }
 
 void SwitchDim() {
